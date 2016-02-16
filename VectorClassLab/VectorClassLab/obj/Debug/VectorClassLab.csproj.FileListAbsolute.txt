@@ -1,0 +1,18 @@
+C:\Users\SirSeebs\Documents\Visual Studio 2015\Projects\VectorClassLab\VectorClassLab\bin\Debug\VectorClassLab.exe.config
+C:\Users\SirSeebs\Documents\Visual Studio 2015\Projects\VectorClassLab\VectorClassLab\obj\Debug\VectorClassLab.csprojResolveAssemblyReference.cache
+C:\Users\SirSeebs\Documents\Visual Studio 2015\Projects\VectorClassLab\VectorClassLab\bin\Debug\VectorClassLab.exe
+C:\Users\SirSeebs\Documents\Visual Studio 2015\Projects\VectorClassLab\VectorClassLab\bin\Debug\VectorClassLab.pdb
+C:\Users\SirSeebs\Documents\Visual Studio 2015\Projects\VectorClassLab\VectorClassLab\obj\Debug\VectorClassLab.exe
+C:\Users\SirSeebs\Documents\Visual Studio 2015\Projects\VectorClassLab\VectorClassLab\obj\Debug\VectorClassLab.pdb
+C:\Users\svc-student\Desktop\VectorClassLab\VectorClassLab\bin\Debug\VectorClassLab.exe.config
+C:\Users\svc-student\Desktop\VectorClassLab\VectorClassLab\obj\Debug\VectorClassLab.exe
+C:\Users\svc-student\Desktop\VectorClassLab\VectorClassLab\obj\Debug\VectorClassLab.pdb
+C:\Users\svc-student\Desktop\VectorClassLab\VectorClassLab\bin\Debug\VectorClassLab.exe
+C:\Users\svc-student\Desktop\VectorClassLab\VectorClassLab\bin\Debug\VectorClassLab.pdb
+C:\Users\svc-student\Desktop\VectorClassLab\VectorClassLab\obj\Debug\VectorClassLab.csprojResolveAssemblyReference.cache
+C:\Users\SirSeebs\Desktop\School\Math & Physics\VectorClassLab\VectorClassLab\obj\Debug\VectorClassLab.pdb
+C:\Users\SirSeebs\Desktop\School\Math & Physics\VectorClassLab\VectorClassLab\bin\Debug\VectorClassLab.pdb
+C:\Users\SirSeebs\Desktop\School\Math & Physics\VectorClassLab\VectorClassLab\obj\Debug\VectorClassLab.csprojResolveAssemblyReference.cache
+C:\Users\SirSeebs\Desktop\School\Math & Physics\VectorClassLab\VectorClassLab\bin\Debug\VectorClassLab.dll.config
+C:\Users\SirSeebs\Desktop\School\Math & Physics\VectorClassLab\VectorClassLab\bin\Debug\VectorClassLab.dll
+C:\Users\SirSeebs\Desktop\School\Math & Physics\VectorClassLab\VectorClassLab\obj\Debug\VectorClassLab.dll
