@@ -18,12 +18,11 @@ namespace ProjectionLab
             Vector3D legOne = new Vector3D();
             Vector3D legTwo = new Vector3D();
             Vector3D legThree = new Vector3D();
+            //Using a temp vector to do some math with.
+            Vector3D tempVector = new Vector3D();
 
-            Console.WriteLine("Projection Lab");
-
+            Console.WriteLine("_______________Projection Lab_______________");
             Console.WriteLine("Please Enter the angles of the Utility Pole:");
-
-            
             Console.Write("Heading: ");
 
             //Get heading input for the utility pole.
@@ -40,11 +39,11 @@ namespace ProjectionLab
             int legs = 0;
             do
             {
-                Console.Write("Please enter the distance of leg " + (legs + 1));
+                Console.Write("Please enter the distance of leg " + (legs + 1) + ": ");
                 tempMagnitude = (float)Convert.ToDouble(Console.ReadLine());
-                Console.Write("Please enter the heading in degrees.");
+                Console.Write("Please enter the heading in degrees: ");
                 tempHeading = (float)Convert.ToDouble(Console.ReadLine());
-                Console.Write("Please Enter the pitch in degrees.");
+                Console.Write("Please Enter the pitch in degrees: ");
                 tempPitch = (float)Convert.ToDouble(Console.ReadLine());
 
                 //Depending on the leg counter depends on what leg we are setting.
@@ -52,13 +51,28 @@ namespace ProjectionLab
                 {
                     case 0:
                         legOne.SetRectGivenMagHeadPitch(tempMagnitude, tempHeading, tempPitch);
-                        legOne.PrintRect();
+                        //Print the mag, head, and pitch from the origin.
+                        legOne.PrintMagHeadPitch();
+                        //Report closest point on Utility Pole.
+
                         break;
                     case 1:
                         legTwo.SetRectGivenMagHeadPitch(tempMagnitude, tempHeading, tempPitch);
+                        tempVector.SetRectGivenMagHeadPitch(tempMagnitude, tempHeading, tempPitch);
+                        tempVector += legOne;
+                        //Print the mag, head, and pitch from the origin.
+                        tempVector.PrintMagHeadPitch();
+                        //Report the closest point on the Utility Pole.
+
                         break;
                     case 2:
                         legThree.SetRectGivenMagHeadPitch(tempMagnitude, tempHeading, tempPitch);
+                        tempVector.SetRectGivenMagHeadPitch(tempMagnitude, tempHeading, tempPitch);
+                        tempVector += legTwo + legOne;
+                        //Print the mag, head, and pitch from the origin.
+                        tempVector.PrintMagHeadPitch();
+                        //Report the closest point on the Utility Pole.
+
                         break;
                 }
                 legs++;
