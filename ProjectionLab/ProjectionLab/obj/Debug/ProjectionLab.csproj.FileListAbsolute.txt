@@ -1,1 +1,2 @@
 C:\Users\SirSeebs\Desktop\School\Math & Physics\ProjectionLab\ProjectionLab\bin\Debug\ProjectionLab.exe.config
+C:\Users\SirSeebs\Documents\GitHub\MathAndPhysicsProjects\ProjectionLab\ProjectionLab\bin\Debug\ProjectionLab.exe.config
