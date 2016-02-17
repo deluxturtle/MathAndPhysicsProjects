@@ -19,7 +19,7 @@ namespace ProjectionLab
             Vector3D legTwo = new Vector3D();
             Vector3D legThree = new Vector3D();
             //Using a temp vector to do some math with.
-            Vector3D tempVector = new Vector3D();
+            Vector3D beeFromOrigin = new Vector3D();
 
             Console.WriteLine("_______________Projection Lab_______________");
             Console.WriteLine("Please Enter the angles of the Utility Pole:");
@@ -50,27 +50,31 @@ namespace ProjectionLab
                 switch (legs)
                 {
                     case 0:
+                        //Set the leg one's vector from input.
                         legOne.SetRectGivenMagHeadPitch(tempMagnitude, tempHeading, tempPitch);
                         //Print the mag, head, and pitch from the origin.
                         legOne.PrintMagHeadPitch();
                         //Report closest point on Utility Pole.
+                        //For the first leg all we need is the projection vector.
 
                         break;
                     case 1:
+                        //Set the leg two's vector from input.
                         legTwo.SetRectGivenMagHeadPitch(tempMagnitude, tempHeading, tempPitch);
-                        tempVector.SetRectGivenMagHeadPitch(tempMagnitude, tempHeading, tempPitch);
-                        tempVector += legOne;
+                        //Get the current vector of the bee.
+                        beeFromOrigin = legOne + legTwo;
                         //Print the mag, head, and pitch from the origin.
-                        tempVector.PrintMagHeadPitch();
+                        beeFromOrigin.PrintMagHeadPitch();
                         //Report the closest point on the Utility Pole.
 
                         break;
                     case 2:
+                        //Set leg three's vector from input.
                         legThree.SetRectGivenMagHeadPitch(tempMagnitude, tempHeading, tempPitch);
-                        tempVector.SetRectGivenMagHeadPitch(tempMagnitude, tempHeading, tempPitch);
-                        tempVector += legTwo + legOne;
+                        //Get the current vector of the bee.
+                        beeFromOrigin = legThree + legTwo + legOne;
                         //Print the mag, head, and pitch from the origin.
-                        tempVector.PrintMagHeadPitch();
+                        beeFromOrigin.PrintMagHeadPitch();
                         //Report the closest point on the Utility Pole.
 
                         break;
