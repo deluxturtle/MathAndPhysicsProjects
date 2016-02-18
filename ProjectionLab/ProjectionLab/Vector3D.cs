@@ -152,6 +152,7 @@ namespace ProjectionLab
         /// <returns></returns>
         public static Vector3D operator ^(Vector3D v1, Vector3D v2)
         {
+            //Scalar * Vector
             //Create the scalar that we will multiply the vector being projected on by.
             float scalar = v1 * v2 / (v2.getX() * v2.getX() + v2.getY() * v2.getY() + v2.getZ() * v2.getZ());
 
