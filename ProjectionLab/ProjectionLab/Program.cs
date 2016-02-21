@@ -3,10 +3,17 @@ using System.Collections.Generic;
 
 namespace ProjectionLab
 {
+    /// <summary>
+    /// @Author: Andrew Seba
+    /// @Description: This program will take in input of a flight path of a bee
+    /// it will output the distance, heading, and pitch from the origin, and 
+    /// output the distance heading and pitch to the top of the pole.
+    /// </summary>
     class Program
     {
         static void Main(string[] args)
         {
+            //Temp value holders to create legs of the bee.
             float tempMagnitude;
             float tempHeading;
             float tempPitch;
@@ -87,6 +94,7 @@ namespace ProjectionLab
                 Vector3D vectorFromTopOfPole = (utilityPole - beeFromOrigin);
                 vectorFromTopOfPole.PrintMagHeadPitch();
 
+                //Reset Console for more vector fun.
                 Console.ReadKey();
                 Console.Clear();
             } while (true);
