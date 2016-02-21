@@ -22,6 +22,9 @@ namespace ProjectionLab
             Vector3D pointOnThePole = utilityPole & 0.5f;
             do
             {
+                //Reset list of legs.
+                legList = new List<Vector3D>();
+
                 Console.WriteLine("_______________Projection Lab_______________");
                 Console.WriteLine("Please Enter the angles of the Utility Pole:");
                 Console.Write("Heading: ");
@@ -36,7 +39,7 @@ namespace ProjectionLab
                 utilityPole.SetRectGivenMagHeadPitch(10.4f, tempHeading, tempPitch);
 
                 //Start recieving input about legs.
-                //Increment counter for how many legs we want.
+                //Increment counter to limit the amount of legs.
                 int legs = 0;
                 do
                 {
@@ -51,29 +54,41 @@ namespace ProjectionLab
                     Vector3D tempLeg = new Vector3D();
                     tempLeg.SetRectGivenMagHeadPitch(tempMagnitude, tempHeading, tempPitch);
 
-                    //Print the mag, head, and pitch from the origin.
-                    tempLeg.PrintMagHeadPitch();
+                    
                     //Add the leg to the list of legs.
                     legList.Add(tempLeg);
+
+                    //Reset bee from Origin
+                    beeFromOrigin = new Vector3D();
 
                     //Add all the legs up in the list to get our current bee vector.
                     foreach(Vector3D leg in legList)
                     {
                         beeFromOrigin += leg;
                     }
+                    //Print the mag, head, and pitch from the origin.
+                    beeFromOrigin.PrintMagHeadPitch();
 
                     //Get the vector from the point on the pole
                     //Using S = P + Proj d PQ
                     Vector3D closestPoint = pointOnThePole + ((beeFromOrigin - pointOnThePole) ^ utilityPole);
 
                     //Report closest point on Utility Pole.
-                    Console.Write("\nClosest Point:");
+                    Console.Write("Closest Point:");
                     closestPoint.PrintRect();
+                    Console.Write("\n");
                     //Go to the next leg.
                     legs++;
                 } while (legs < 3);
 
+                /*Report the distance and direction needed for the bee to fly
+                directly from its final location to the top of the pole.*/
+                Console.WriteLine("Distance and Direction needed to reach the top of the pole:");
+                Vector3D vectorFromTopOfPole = (utilityPole - beeFromOrigin);
+                vectorFromTopOfPole.PrintMagHeadPitch();
+
                 Console.ReadKey();
+                Console.Clear();
             } while (true);
         }
     }
