@@ -22,3 +22,6 @@ C:\Users\SirSeebs\Documents\GitHub\MathAndPhysicsProjects\VectorClassLab\VectorC
 C:\Users\SirSeebs\Documents\GitHub\MathAndPhysicsProjects\VectorClassLab\VectorClassLab\bin\Debug\VectorClassLab.pdb
 C:\Users\SirSeebs\Documents\GitHub\MathAndPhysicsProjects\VectorClassLab\VectorClassLab\obj\Debug\VectorClassLab.csprojResolveAssemblyReference.cache
 C:\Users\SirSeebs\Documents\GitHub\MathAndPhysicsProjects\VectorClassLab\VectorClassLab\obj\Debug\VectorClassLab.exe
+C:\Users\svc-student\Documents\GitHub\MathAndPhysicsProjects\VectorClassLab\VectorClassLab\bin\Debug\VectorClassLab.exe.config
+C:\Users\svc-student\Documents\GitHub\MathAndPhysicsProjects\VectorClassLab\VectorClassLab\obj\Debug\VectorClassLab.exe
+C:\Users\svc-student\Documents\GitHub\MathAndPhysicsProjects\VectorClassLab\VectorClassLab\obj\Debug\VectorClassLab.pdb

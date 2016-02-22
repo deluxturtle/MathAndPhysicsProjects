@@ -15,3 +15,11 @@ C:\Users\Andy\Documents\GitHub\MathAndPhysicsProjects\ProjectionLab\ProjectionLa
 C:\Users\Andy\Documents\GitHub\MathAndPhysicsProjects\ProjectionLab\ProjectionLab\bin\Debug\VectorClassLab.dll
 C:\Users\Andy\Documents\GitHub\MathAndPhysicsProjects\ProjectionLab\ProjectionLab\bin\Debug\VectorClassLab.pdb
 C:\Users\Andy\Documents\GitHub\MathAndPhysicsProjects\ProjectionLab\ProjectionLab\obj\Debug\ProjectionLab.csprojResolveAssemblyReference.cache
+C:\Users\svc-student\Documents\GitHub\MathAndPhysicsProjects\ProjectionLab\ProjectionLab\obj\Debug\ProjectionLab.pdb
+C:\Users\svc-student\Documents\GitHub\MathAndPhysicsProjects\ProjectionLab\ProjectionLab\bin\Debug\ProjectionLab.pdb
+C:\Users\svc-student\Documents\GitHub\MathAndPhysicsProjects\ProjectionLab\ProjectionLab\bin\Debug\VectorClassLab.dll
+C:\Users\svc-student\Documents\GitHub\MathAndPhysicsProjects\ProjectionLab\ProjectionLab\bin\Debug\VectorClassLab.pdb
+C:\Users\svc-student\Documents\GitHub\MathAndPhysicsProjects\ProjectionLab\ProjectionLab\obj\Debug\ProjectionLab.csprojResolveAssemblyReference.cache
+C:\Users\svc-student\Documents\GitHub\MathAndPhysicsProjects\ProjectionLab\ProjectionLab\bin\Debug\ProjectionLab.dll.config
+C:\Users\svc-student\Documents\GitHub\MathAndPhysicsProjects\ProjectionLab\ProjectionLab\bin\Debug\ProjectionLab.dll
+C:\Users\svc-student\Documents\GitHub\MathAndPhysicsProjects\ProjectionLab\ProjectionLab\obj\Debug\ProjectionLab.dll

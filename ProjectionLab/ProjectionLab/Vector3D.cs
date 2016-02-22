@@ -19,7 +19,7 @@ namespace ProjectionLab
         /// <returns></returns>
         public static Vector3D operator +(Vector3D v1, Vector3D v2)
         {
-            //Add each axis seperatly
+            //Add each axis separately
             float x = v1.getX() + v2.getX();
             float y = v1.getY() + v2.getY();
             float z = v1.getZ() + v2.getZ();
