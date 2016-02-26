@@ -30,15 +30,15 @@ namespace LinearAccelerationPartTwo
                 writer.WriteLine("Time(s),Position(m),Velocity(m/s)");
                 while (curTime <= endTime)
                 {
-                    //Find the new position.
-                    curY += curVelocity * timeStep + ((acceleration * (timeStep * timeStep)) / 2.0f);
-                    //Find the new velocity
-                    curVelocity += acceleration * timeStep;
-
                     //Output Time, Position, Velocity data for the ball.
                     Console.WriteLine(string.Format("{0:N}\t{1:N}\t{2:N}", curTime, curY, curVelocity));
                     writer.WriteLine(string.Format("{0:N},{1:N},{2:N}", curTime, curY, curVelocity));
 
+                    //Find the new position.
+                    curY += curVelocity * timeStep + ((acceleration * (timeStep * timeStep)) / 2.0f);
+                    //Find the new velocity
+                    curVelocity += acceleration * timeStep;
+                    
                     //Increment Time.
                     curTime += timeStep;
                 }
