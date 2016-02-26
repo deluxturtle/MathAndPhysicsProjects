@@ -30,9 +30,8 @@ namespace LinearAccelerationPartTwo
                 writer.WriteLine("Time(s),Position(m),Velocity(m/s)");
                 while (curTime <= endTime)
                 {
-
                     //Find the new position.
-                    curY += curVelocity * timeStep + (acceleration * (timeStep * timeStep)) / 2.0f;
+                    curY += curVelocity * timeStep + ((acceleration * (timeStep * timeStep)) / 2.0f);
                     //Find the new velocity
                     curVelocity += acceleration * timeStep;
 

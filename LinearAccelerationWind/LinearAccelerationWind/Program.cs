@@ -1,13 +1,8 @@
 ﻿using System;
 using System.IO;
 
-namespace LinearAcceleratedMotionLab
+namespace LinearAccelerationWind
 {
-    /// <summary>
-    /// @Author: Andrew Seba
-    /// @Description: Outputs a csv file of physics data of a ball being thrown
-    /// upwards.
-    /// </summary>
     class Program
     {
         static void Main(string[] args)
@@ -22,10 +17,10 @@ namespace LinearAcceleratedMotionLab
 
             float curTime = 0.0f;
             float endTime = 10.00f;
-            float timeStep = 0.01f;
+            float timeStep = 0.1f;
 
             //
-            using(StreamWriter writer = new StreamWriter("ex02_eular_0-01.csv"))
+            using (StreamWriter writer = new StreamWriter("ex02_wind.csv"))
             {
                 Console.WriteLine("Time(s):\tPosition(m)\tVelocity(m/s)");
                 writer.WriteLine("Time(s),Position(m),Velocity(m/s)");
@@ -34,6 +29,8 @@ namespace LinearAcceleratedMotionLab
 
                     curY += curVelocity * timeStep; //Find the new position.
                     curVelocity += gravity * timeStep;//Find the new velocity
+
+                    curVelocity += curVelocity * -0.10f;// account wind resistance
 
                     //Output Time, Position, Velocity data for the ball.
                     Console.WriteLine(string.Format("{0:N}\t{1:N}\t{2:N}", curTime, curY, curVelocity));
