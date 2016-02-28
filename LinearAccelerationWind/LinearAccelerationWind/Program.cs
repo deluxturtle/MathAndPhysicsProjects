@@ -13,7 +13,7 @@ namespace LinearAccelerationWind
             float curVelocity = initialVelocity;
             float curY = initialHeight;
 
-            const float gravity = -9.8f;
+            float acceleration = -9.8f;
 
             float curTime = 0.0f;
             float endTime = 10.00f;
@@ -28,9 +28,10 @@ namespace LinearAccelerationWind
                 {
 
                     curY += curVelocity * timeStep; //Find the new position.
-                    curVelocity += gravity * timeStep;//Find the new velocity
 
-                    curVelocity += curVelocity * -0.10f;// account wind resistance
+                    curVelocity += acceleration * timeStep;//Find the new velocity //added wind resistance to the acceleration
+
+                    acceleration = ((-9.8f) - 0.1f * curVelocity);
 
                     //Output Time, Position, Velocity data for the ball.
                     Console.WriteLine(string.Format("{0:N}\t{1:N}\t{2:N}", curTime, curY, curVelocity));
