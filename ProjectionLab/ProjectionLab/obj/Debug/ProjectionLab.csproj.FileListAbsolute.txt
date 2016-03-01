@@ -1,11 +1,8 @@
 C:\Users\SirSeebs\Desktop\School\Math & Physics\ProjectionLab\ProjectionLab\bin\Debug\ProjectionLab.exe.config
-C:\Users\SirSeebs\Documents\GitHub\MathAndPhysicsProjects\ProjectionLab\ProjectionLab\bin\Debug\ProjectionLab.exe.config
-C:\Users\SirSeebs\Documents\GitHub\MathAndPhysicsProjects\ProjectionLab\ProjectionLab\bin\Debug\ProjectionLab.exe
 C:\Users\SirSeebs\Documents\GitHub\MathAndPhysicsProjects\ProjectionLab\ProjectionLab\bin\Debug\ProjectionLab.pdb
 C:\Users\SirSeebs\Documents\GitHub\MathAndPhysicsProjects\ProjectionLab\ProjectionLab\bin\Debug\VectorClassLab.dll
 C:\Users\SirSeebs\Documents\GitHub\MathAndPhysicsProjects\ProjectionLab\ProjectionLab\bin\Debug\VectorClassLab.pdb
 C:\Users\SirSeebs\Documents\GitHub\MathAndPhysicsProjects\ProjectionLab\ProjectionLab\obj\Debug\ProjectionLab.csprojResolveAssemblyReference.cache
-C:\Users\SirSeebs\Documents\GitHub\MathAndPhysicsProjects\ProjectionLab\ProjectionLab\obj\Debug\ProjectionLab.exe
 C:\Users\SirSeebs\Documents\GitHub\MathAndPhysicsProjects\ProjectionLab\ProjectionLab\obj\Debug\ProjectionLab.pdb
 C:\Users\Andy\Documents\GitHub\MathAndPhysicsProjects\ProjectionLab\ProjectionLab\bin\Debug\ProjectionLab.exe.config
 C:\Users\Andy\Documents\GitHub\MathAndPhysicsProjects\ProjectionLab\ProjectionLab\obj\Debug\ProjectionLab.exe
@@ -23,3 +20,6 @@ C:\Users\svc-student\Documents\GitHub\MathAndPhysicsProjects\ProjectionLab\Proje
 C:\Users\svc-student\Documents\GitHub\MathAndPhysicsProjects\ProjectionLab\ProjectionLab\bin\Debug\ProjectionLab.dll.config
 C:\Users\svc-student\Documents\GitHub\MathAndPhysicsProjects\ProjectionLab\ProjectionLab\bin\Debug\ProjectionLab.dll
 C:\Users\svc-student\Documents\GitHub\MathAndPhysicsProjects\ProjectionLab\ProjectionLab\obj\Debug\ProjectionLab.dll
+C:\Users\SirSeebs\Documents\GitHub\MathAndPhysicsProjects\ProjectionLab\ProjectionLab\bin\Debug\ProjectionLab.dll.config
+C:\Users\SirSeebs\Documents\GitHub\MathAndPhysicsProjects\ProjectionLab\ProjectionLab\bin\Debug\ProjectionLab.dll
+C:\Users\SirSeebs\Documents\GitHub\MathAndPhysicsProjects\ProjectionLab\ProjectionLab\obj\Debug\ProjectionLab.dll

@@ -6,7 +6,7 @@ namespace ProjectionLab
     /// @Author: Andrew Seba
     /// @Description: Extended Vector3D class to include vector operations.
     /// </summary>
-    class Vector3D : VectorClassLab.Vector3D
+    public class Vector3D : VectorClassLab.Vector3D
     {
         const float rad2deg = 57.2957795131f;
 
