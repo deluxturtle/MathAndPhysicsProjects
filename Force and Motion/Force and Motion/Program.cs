@@ -16,6 +16,8 @@ namespace Force_and_Motion
             float velocity;
             float acceleration;
 
+            float curTime = 0;
+
             Console.Write("Speed: ");
             velocity = (float)Convert.ToDouble(Console.ReadLine());
             Console.Write("Friction: ");
@@ -31,7 +33,8 @@ namespace Force_and_Motion
                 velocity += acceleration * timeStep;
                 //update acceleration.
                 Console.WriteLine(string.Format("{0:N2},\t{1:N2}", x ,velocity));
-            } while (velocity > 0);
+                curTime += timeStep;
+            } while (velocity >= 0);
 
             Console.ReadKey();
         }
