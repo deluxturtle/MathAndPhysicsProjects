@@ -14,6 +14,12 @@ namespace WorkAndEnergyLabPart1
     {
         static void Main(string[] args)
         {
+            //Instantiate the class
+            MarbleLab lab1 = new MarbleLab();
+            //start the sim
+            lab1.Start();
         }
+
+
     }
 }

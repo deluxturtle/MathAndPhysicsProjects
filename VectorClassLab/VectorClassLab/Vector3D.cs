@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace VectorClassLab
 {
@@ -30,6 +26,33 @@ namespace VectorClassLab
             x = 0;
             y = 0;
             z = 0;
+            w = 1;
+        }
+
+        /// <summary>
+        /// 2D Vector Constructor
+        /// </summary>
+        /// <param name="pX"></param>
+        /// <param name="pY"></param>
+        public Vector3D(float pX, float pY)
+        {
+            x = pX;
+            y = pY;
+            z = 0;
+            w = 1;
+        }
+
+        /// <summary>
+        /// Constructor that will set rect given rect 3D.
+        /// </summary>
+        /// <param name="X"></param>
+        /// <param name="Y"></param>
+        /// <param name="Z"></param>
+        public Vector3D(float pX, float pY, float pZ)
+        {
+            x = pX;
+            y = pY;
+            z = pZ;
             w = 1;
         }
 
@@ -454,5 +477,39 @@ namespace VectorClassLab
             return v1 - (v1 ^ v2);
         }
 
+
+        public Vector3D Cross(Vector3D v2)
+        {
+            Vector3D u = new Vector3D(getX(), getY(), getZ());
+            Vector3D v = new Vector3D(v2.getX(), v2.getY(), v2.getZ());
+
+            float i = u.getY() * v.getZ() - v.getY() * u.getZ();
+            float j = u.getX() * v.getZ() - v.getX() * u.getZ();
+            float k = u.getX() * v.getY() - v.getX() * u.getY();
+
+            Vector3D cross = new Vector3D(i, j, k);
+            return cross;
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="MovingObject"></param>
+        /// <param name="Direction"></param>
+        /// <returns></returns>
+        public Vector3D ClosestPointLine(Vector3D v2, Vector3D v3)
+        {
+            Vector3D ship = new Vector3D(getX(), getY(), getZ());
+            //Meteor to Ship
+            Vector3D pointOnLineToPoint = ship - v2;
+
+            Vector3D closestPoint = v2 + (pointOnLineToPoint ^ v3);
+            return closestPoint;
+        }
+
+        //public Vector3D ClosestPointPlane(Vector3D v2, Vector3D v3)
+        //{
+
+        //}
     }
 }
