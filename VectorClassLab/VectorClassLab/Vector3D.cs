@@ -478,6 +478,12 @@ namespace VectorClassLab
         }
 
 
+        /// <summary>
+        /// Calling this function on a vector gives the cross product of the
+        /// vector and the parameter vector.
+        /// </summary>
+        /// <param name="v2"></param>
+        /// <returns></returns>
         public Vector3D Cross(Vector3D v2)
         {
             Vector3D u = new Vector3D(getX(), getY(), getZ());
@@ -494,8 +500,8 @@ namespace VectorClassLab
         /// <summary>
         /// 
         /// </summary>
-        /// <param name="MovingObject"></param>
-        /// <param name="Direction"></param>
+        /// <param name="v2">MovingObject</param>
+        /// <param name="v3">Direction</param>
         /// <returns></returns>
         public Vector3D ClosestPointLine(Vector3D v2, Vector3D v3)
         {
@@ -507,9 +513,25 @@ namespace VectorClassLab
             return closestPoint;
         }
 
-        //public Vector3D ClosestPointPlane(Vector3D v2, Vector3D v3)
-        //{
 
-        //}
+        /// <summary>
+        /// Returns the closest point on a plane to the vector this is
+        /// being called on.
+        /// </summary>
+        /// <param name="v2">normal the plane is facing</param>
+        /// <param name="v3">the constant?</param>
+        /// <returns></returns>
+        public Vector3D ClosestPointPlane(Vector3D v2, Vector3D v3)
+        {
+
+            Vector3D ship = new Vector3D(getX(), getY(), getZ());
+            Vector3D pointOnPlaneToShip = v3 - ship;
+
+
+            Vector3D closestPoint = ship - (pointOnPlaneToShip ^ v2);
+
+
+            return closestPoint;
+        }
     }
 }

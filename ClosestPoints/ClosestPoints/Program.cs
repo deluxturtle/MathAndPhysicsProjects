@@ -11,8 +11,9 @@ namespace ClosestPoints
         static void Main(string[] args)
         {
             ClosestPointLab lab = new ClosestPointLab();
-            lab.LineLab();
+            //lab.LineLab();
             lab.PlaneLab();
+            Console.ReadKey();
         }
     }
 }
