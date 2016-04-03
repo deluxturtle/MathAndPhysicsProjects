@@ -489,11 +489,13 @@ namespace VectorClassLab
             Vector3D u = new Vector3D(getX(), getY(), getZ());
             Vector3D v = new Vector3D(v2.getX(), v2.getY(), v2.getZ());
 
+            //Get the cross product resulting in i j and k
             float i = u.getY() * v.getZ() - v.getY() * u.getZ();
             float j = u.getX() * v.getZ() - v.getX() * u.getZ();
             float k = u.getX() * v.getY() - v.getX() * u.getY();
 
-            Vector3D cross = new Vector3D(i, j, k);
+
+            Vector3D cross = new Vector3D(i, -j, k);
             return cross;
         }
 
@@ -505,10 +507,13 @@ namespace VectorClassLab
         /// <returns></returns>
         public Vector3D ClosestPointLine(Vector3D v2, Vector3D v3)
         {
+            //Get the vector being called on.
             Vector3D ship = new Vector3D(getX(), getY(), getZ());
             //Meteor to Ship
             Vector3D pointOnLineToPoint = ship - v2;
 
+            //add the moving object to the projection of point on line to ship
+            //onto the line.
             Vector3D closestPoint = v2 + (pointOnLineToPoint ^ v3);
             return closestPoint;
         }
@@ -519,15 +524,18 @@ namespace VectorClassLab
         /// being called on.
         /// </summary>
         /// <param name="v2">normal the plane is facing</param>
-        /// <param name="v3">the constant?</param>
+        /// <param name="v3">the constant</param>
         /// <returns></returns>
         public Vector3D ClosestPointPlane(Vector3D v2, Vector3D v3)
         {
-
+            //get the vector being called.
             Vector3D ship = new Vector3D(getX(), getY(), getZ());
+            //Get the vector pointing from the ship to the point on the plane.
             Vector3D pointOnPlaneToShip = v3 - ship;
 
-
+            //Get the closest point by projecting onto the normal with the
+            //vector pointing from the ship to the plane, and subtracting
+            //the ship vector.
             Vector3D closestPoint = ship - (pointOnPlaneToShip ^ v2);
 
 
