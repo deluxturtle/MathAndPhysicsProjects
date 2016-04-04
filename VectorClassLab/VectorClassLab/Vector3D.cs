@@ -86,6 +86,21 @@ namespace VectorClassLab
         }
 
         /// <summary>
+        /// 3D set vector rectangular form by given 4D rectangular input.
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="z"></param>
+        public void SetRectGivenRect(float pX, float pY, float pZ, float pW)
+        {
+            //Save the rectangular coordinates.
+            x = pX;
+            y = pY;
+            z = pZ;
+            w = pW;
+        }
+
+        /// <summary>
         /// 2D from polar to rectangular form.
         /// </summary>
         /// <param name="Magnitude"></param>
@@ -308,6 +323,15 @@ namespace VectorClassLab
         {
             return z;
         }
+
+        /// <summary>
+        /// Returns the w value.
+        /// </summary>
+        /// <returns></returns>
+        public float getW()
+        {
+            return w;
+        }
         
 
         /// <summary>
@@ -385,8 +409,8 @@ namespace VectorClassLab
         /// Normalize Operator.
         /// Returns a vector with the same direction with magnitude of 1.
         /// </summary>
-        /// <param name="Vector to be nomralized."></param>
-        /// <returns></returns>
+        /// <param name="vector">Vector to be nomralized.</param>
+        /// <returns>Normalized Vector</returns>
         public static Vector3D operator !(Vector3D vector)
         {
             //if magnitude is 0 return an empty vector.
@@ -413,16 +437,17 @@ namespace VectorClassLab
         /// <summary>
         /// Returns the Dot Product of two vectors.
         /// </summary>
-        /// <param name="First Vector"></param>
-        /// <param name="Second Vector"></param>
-        /// <returns></returns>
+        /// <param name="v1">First Vector</param>
+        /// <param name="v2">Second Vector</param>
+        /// <returns>Scalar</returns>
         public static float operator *(Vector3D v1, Vector3D v2)
         {
             float x = v1.getX() * v2.getX();
             float y = v1.getY() * v2.getY();
             float z = v1.getZ() * v2.getZ();
+            float w = v1.getW() * v2.getW();
 
-            return x + y + z;
+            return x + y + z + w;
         }
 
         /// <summary>
