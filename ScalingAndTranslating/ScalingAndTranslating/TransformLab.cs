@@ -43,10 +43,10 @@ namespace ScalingAndTranslating
                         Translate(obj);
                         break;
                     case 2:
-                        RawScale();
+                        RawScale(obj);
                         break;
                     case 3:
-                        CenterScale();
+                        CenterScale(obj);
                         break;
 
 
@@ -60,18 +60,81 @@ namespace ScalingAndTranslating
 
         }
 
-        void CenterScale()
+        void CenterScale(Vector3D[] pObj)
         {
+
+            float centerX, centerY, centerZ;
+            centerZ = centerY = centerX = 0;
+
+            Console.WriteLine("Center Scaling: ");
+            Console.Write("How much in the x direction? ");
+            float xScale = (float)Convert.ToDouble(Console.ReadLine());
+            Console.Write("How much in the y direction? ");
+            float yScale = (float)Convert.ToDouble(Console.ReadLine());
+            Console.Write("How much in the z direction? ");
+            float zScale = (float)Convert.ToDouble(Console.ReadLine());
+
+
+            //Get the sum of all the vertices
+            for (int i = 0; i < pObj.Length; i++)
+            {
+                centerX += pObj[i].getX();
+                centerY += pObj[i].getY();
+                centerZ += pObj[i].getZ();
+            }
+
+            //Get the center
+            centerX /= pObj.Length;
+            centerY /= pObj.Length;
+            centerZ /= pObj.Length;
+
+            
+            float[,] matrix =
+            {
+                {xScale, 0, 0, (centerX * (1 - xScale)) },
+                {0, yScale, 0, (centerY * (1 - yScale)) },
+                {0, 0, zScale, (centerZ * (1 - zScale)) },
+                {0, 0, 0, 1 }
+            };
+
+            for (int i = 0; i < pObj.Length; i++)
+            {
+                pObj[i] = pObj[i].ScaleByMatrix(matrix);
+                pObj[i].PrintRect();
+            }
 
         }
 
-        void RawScale()
+        void RawScale(Vector3D[] pObj)
         {
+            Console.WriteLine("RawScale:");
+            Console.Write("How much in the x direction? ");
+            float xScale = (float)Convert.ToDouble(Console.ReadLine());
+            Console.Write("How much in the y direction? ");
+            float yScale = (float)Convert.ToDouble(Console.ReadLine());
+            Console.Write("How much in the z direction? ");
+            float zScale = (float)Convert.ToDouble(Console.ReadLine());
+
+            float[,] rawScaleMatrix =
+            {
+                {xScale, 0, 0, 0 },
+                {0, yScale, 0, 0 },
+                {0, 0, zScale, 0 },
+                {0, 0, 0, 1 }
+            };
+
+            for (int i = 0; i < pObj.Length; i++)
+            {
+                pObj[i] = pObj[i].ScaleByMatrix(rawScaleMatrix);
+                pObj[i].PrintRect();
+            }
+
 
         }
 
         void Translate(Vector3D[] pObj)
         {
+            Console.WriteLine("Translate:");
             Console.Write("How much in the x direction? ");
             float xTranslate = (float)Convert.ToDouble(Console.ReadLine());
             Console.Write("How much in the y direction? ");
@@ -79,16 +142,19 @@ namespace ScalingAndTranslating
             Console.Write("How much in the z direction? ");
             float zTranslate = (float)Convert.ToDouble(Console.ReadLine());
 
-            for(int i = 0; i < pObj.Length; i++)
+            float[,] translationMatrix = 
+            { 
+                {xTranslate},
+                {yTranslate},
+                {zTranslate},
+                {1}
+            };
+
+            for (int i = 0; i < pObj.Length; i++)
             {
-                pObj[i].SetRectGivenRect(
-                    pObj[i].getX() + xTranslate,
-                    pObj[i].getY() + yTranslate,
-                    pObj[i].getZ() + zTranslate);
+                pObj[i] = pObj[i].TranslateByMatrix(translationMatrix);
+                pObj[i].PrintRect();
             }
-
-
-
         }
 
 

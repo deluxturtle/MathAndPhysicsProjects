@@ -12,7 +12,7 @@ namespace VectorClassLab
         private float x = 0;
         private float y = 0;
         private float z = 0;
-        private float w = 0;//Used for later
+        private float w = 1;//Used for later
 
         //Conversion values to convert from radians to degrees, and vice versa.
         const float rad2deg = 57.2957795131f;
@@ -69,6 +69,7 @@ namespace VectorClassLab
             y = pY;
             //Set z to 0 because its just a 2D
             z = 0;
+            w = 1;
         }
 
         /// <summary>
@@ -83,6 +84,7 @@ namespace VectorClassLab
             x = pX;
             y = pY;
             z = pZ;
+            w = 1;
         }
 
         /// <summary>
@@ -565,6 +567,50 @@ namespace VectorClassLab
 
 
             return closestPoint;
+        }
+
+        /// <summary>
+        /// Translates the vector by the translation matrix with a row count of
+        /// 4 and collumn count of 1.
+        /// </summary>
+        /// <param name="matrix"></param>
+        /// <returns></returns>
+        public Vector3D TranslateByMatrix(float[,] matrix)
+        {
+            float x, y, z;
+
+            //if the matrix doesnt have all 4 values then return the same vector.
+            if (matrix.GetLength(0) != 4 && matrix.GetLength(1) != 1)
+            {
+                return new Vector3D(getX(), getY(), getZ());
+            }
+            else
+            {
+                x = getX() + matrix[0, 0];
+                y = getY() + matrix[1, 0];
+                z = getZ() + matrix[2, 0];
+                return new Vector3D(x, y, z);
+            }
+
+        }
+
+        public Vector3D ScaleByMatrix(float[,] matrix)
+        {
+            float x, y, z, w;
+            //If the matrix doesn't match a scaling matrix demensions return
+            //the original vector.
+            if (matrix.GetLength(0) != 4 && matrix.GetLength(1) != 4)
+            {
+                return new Vector3D(getX(), getY(), getZ());
+            }
+            else
+            {
+                x = matrix[0, 0] * getX() + matrix[0, 1] * getY() + matrix[0, 2] * getZ() + matrix[0, 3];
+                y = matrix[1, 0] * getX() + matrix[1, 1] * getY() + matrix[1, 2] * getZ() + matrix[1, 3];
+                z = matrix[2, 0] * getX() + matrix[2, 1] * getY() + matrix[2, 2] * getZ() + matrix[2, 3];
+
+                return new Vector3D(x, y, z);
+            }
         }
     }
 }
