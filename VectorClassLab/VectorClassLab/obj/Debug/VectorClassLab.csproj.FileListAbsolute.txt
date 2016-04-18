@@ -19,9 +19,12 @@ C:\Users\SirSeebs\Desktop\School\Math & Physics\VectorClassLab\VectorClassLab\ob
 C:\Users\SirSeebs\Documents\GitHub\MathAndPhysicsProjects\VectorClassLab\VectorClassLab\obj\Debug\VectorClassLab.pdb
 C:\Users\SirSeebs\Documents\GitHub\MathAndPhysicsProjects\VectorClassLab\VectorClassLab\bin\Debug\VectorClassLab.pdb
 C:\Users\SirSeebs\Documents\GitHub\MathAndPhysicsProjects\VectorClassLab\VectorClassLab\obj\Debug\VectorClassLab.csprojResolveAssemblyReference.cache
-C:\Users\svc-student\Documents\GitHub\MathAndPhysicsProjects\VectorClassLab\VectorClassLab\bin\Debug\VectorClassLab.exe.config
-C:\Users\svc-student\Documents\GitHub\MathAndPhysicsProjects\VectorClassLab\VectorClassLab\obj\Debug\VectorClassLab.exe
 C:\Users\svc-student\Documents\GitHub\MathAndPhysicsProjects\VectorClassLab\VectorClassLab\obj\Debug\VectorClassLab.pdb
 C:\Users\SirSeebs\Documents\GitHub\MathAndPhysicsProjects\VectorClassLab\VectorClassLab\bin\Debug\VectorClassLab.dll.config
 C:\Users\SirSeebs\Documents\GitHub\MathAndPhysicsProjects\VectorClassLab\VectorClassLab\bin\Debug\VectorClassLab.dll
 C:\Users\SirSeebs\Documents\GitHub\MathAndPhysicsProjects\VectorClassLab\VectorClassLab\obj\Debug\VectorClassLab.dll
+C:\Users\svc-student\Documents\GitHub\MathAndPhysicsProjects\VectorClassLab\VectorClassLab\bin\Debug\VectorClassLab.dll.config
+C:\Users\svc-student\Documents\GitHub\MathAndPhysicsProjects\VectorClassLab\VectorClassLab\bin\Debug\VectorClassLab.dll
+C:\Users\svc-student\Documents\GitHub\MathAndPhysicsProjects\VectorClassLab\VectorClassLab\bin\Debug\VectorClassLab.pdb
+C:\Users\svc-student\Documents\GitHub\MathAndPhysicsProjects\VectorClassLab\VectorClassLab\obj\Debug\VectorClassLab.csprojResolveAssemblyReference.cache
+C:\Users\svc-student\Documents\GitHub\MathAndPhysicsProjects\VectorClassLab\VectorClassLab\obj\Debug\VectorClassLab.dll
