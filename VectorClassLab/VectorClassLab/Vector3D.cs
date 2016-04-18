@@ -57,6 +57,21 @@ namespace VectorClassLab
         }
 
         /// <summary>
+        /// Constructor that will set the new vector with the 4th variable.
+        /// </summary>
+        /// <param name="pX"></param>
+        /// <param name="pY"></param>
+        /// <param name="pZ"></param>
+        /// <param name="pW"></param>
+        public Vector3D(float pX, float pY, float pZ, float pW)
+        {
+            x = pX;
+            y = pY;
+            z = pZ;
+            w = pW;
+        }
+
+        /// <summary>
         /// 2D set vector rect by given rect. With 2D rectangular cooridnates.
         /// Ex. < 1, 2 > == where x = 1, and y = 2.
         /// </summary>
@@ -87,12 +102,14 @@ namespace VectorClassLab
             w = 1;
         }
 
+
         /// <summary>
         /// 3D set vector rectangular form by given 4D rectangular input.
         /// </summary>
-        /// <param name="x"></param>
-        /// <param name="y"></param>
-        /// <param name="z"></param>
+        /// <param name="pX"></param>
+        /// <param name="pY"></param>
+        /// <param name="pZ"></param>
+        /// <param name="pW">w component</param>
         public void SetRectGivenRect(float pX, float pY, float pZ, float pW)
         {
             //Save the rectangular coordinates.
@@ -569,31 +586,13 @@ namespace VectorClassLab
             return closestPoint;
         }
 
+
         /// <summary>
-        /// Translates the vector by the translation matrix with a row count of
-        /// 4 and collumn count of 1.
+        /// Takes in a multi demensional array 4x4 and scales the vertex by 
+        /// the matrix.
         /// </summary>
         /// <param name="matrix"></param>
         /// <returns></returns>
-        public Vector3D TranslateByMatrix(float[,] matrix)
-        {
-            float x, y, z;
-
-            //if the matrix doesnt have all 4 values then return the same vector.
-            if (matrix.GetLength(0) != 4 && matrix.GetLength(1) != 1)
-            {
-                return new Vector3D(getX(), getY(), getZ());
-            }
-            else
-            {
-                x = getX() + matrix[0, 0];
-                y = getY() + matrix[1, 0];
-                z = getZ() + matrix[2, 0];
-                return new Vector3D(x, y, z);
-            }
-
-        }
-
         public Vector3D ScaleByMatrix(float[,] matrix)
         {
             float x, y, z, w;
@@ -601,16 +600,42 @@ namespace VectorClassLab
             //the original vector.
             if (matrix.GetLength(0) != 4 && matrix.GetLength(1) != 4)
             {
-                return new Vector3D(getX(), getY(), getZ());
+                return this;
             }
             else
             {
-                x = matrix[0, 0] * getX() + matrix[0, 1] * getY() + matrix[0, 2] * getZ() + matrix[0, 3];
-                y = matrix[1, 0] * getX() + matrix[1, 1] * getY() + matrix[1, 2] * getZ() + matrix[1, 3];
-                z = matrix[2, 0] * getX() + matrix[2, 1] * getY() + matrix[2, 2] * getZ() + matrix[2, 3];
+                x = matrix[0, 0] * this.x + matrix[0, 1] * this.y + matrix[0, 2] * this.z + matrix[0, 3];
+                y = matrix[1, 0] * this.x + matrix[1, 1] * this.y + matrix[1, 2] * this.z + matrix[1, 3];
+                z = matrix[2, 0] * this.x + matrix[2, 1] * this.y + matrix[2, 2] * this.z + matrix[2, 3];
 
                 return new Vector3D(x, y, z);
             }
+        }
+
+        /// <summary>
+        /// Scales the vertex by a 4x4 concatenated vector3D array.
+        /// </summary>
+        /// <param name="matrix">An array of Vector3D objects at length 4</param>
+        /// <returns></returns>
+        public Vector3D ScaleByMatrix(Vector3D[] matrix)
+        {
+            float x, y, z, w;
+
+            //If the matrix doesn't match the scaling matrix demensions return
+            //the original vector
+            if (matrix.Length != 4)
+            {
+                return this;
+            }
+            else
+            {
+                x = matrix[0] * this;
+                y = matrix[1] * this;
+                z = matrix[2] * this;
+                w = matrix[3] * this;
+                return new Vector3D(x, y, z, w);
+            }
+
         }
     }
 }

@@ -14,7 +14,9 @@ namespace ScalingAndTranslating
     class TransformLab
     {
 
-
+        /// <summary>
+        /// Entry point for the lab (Starts the menu)
+        /// </summary>
         public void Start()
         {
             Console.Write("How many vertices is your object? ");
@@ -60,6 +62,12 @@ namespace ScalingAndTranslating
 
         }
 
+        /// <summary>
+        /// Takes input from  user about how much to scale in each direction and
+        /// then calculates the center then uses the concatenated matrix to
+        /// manipulate transform the objects vertices.
+        /// </summary>
+        /// <param name="pObj"></param>
         void CenterScale(Vector3D[] pObj)
         {
 
@@ -87,14 +95,15 @@ namespace ScalingAndTranslating
             centerX /= pObj.Length;
             centerY /= pObj.Length;
             centerZ /= pObj.Length;
-
             
-            float[,] matrix =
+
+            Vector3D[] matrix =
             {
-                {xScale, 0, 0, (centerX * (1 - xScale)) },
-                {0, yScale, 0, (centerY * (1 - yScale)) },
-                {0, 0, zScale, (centerZ * (1 - zScale)) },
-                {0, 0, 0, 1 }
+                new Vector3D(xScale, 0, 0, centerX * (1 - xScale)),
+                new Vector3D(0, yScale, 0, centerY * (1 - yScale)),
+                new Vector3D(0, 0, zScale, centerZ * (1 - zScale)),
+                new Vector3D(0, 0, 0, 1 )
+
             };
 
             for (int i = 0; i < pObj.Length; i++)
@@ -105,6 +114,11 @@ namespace ScalingAndTranslating
 
         }
 
+        /// <summary>
+        /// Gets input from the user about how much to scale the object and uses
+        /// a 4x4 matrix to scale the objects vertices.
+        /// </summary>
+        /// <param name="pObj"></param>
         void RawScale(Vector3D[] pObj)
         {
             Console.WriteLine("RawScale:");
@@ -115,23 +129,40 @@ namespace ScalingAndTranslating
             Console.Write("How much in the z direction? ");
             float zScale = (float)Convert.ToDouble(Console.ReadLine());
 
-            float[,] rawScaleMatrix =
+            //float[,] rawScaleMatrix =
+            //{
+            //    {xScale, 0, 0, 0 },
+            //    {0, yScale, 0, 0 },
+            //    {0, 0, zScale, 0 },
+            //    {0, 0, 0, 1 }
+            //};
+
+            Vector3D[] rawScaleMatrix =
             {
-                {xScale, 0, 0, 0 },
-                {0, yScale, 0, 0 },
-                {0, 0, zScale, 0 },
-                {0, 0, 0, 1 }
+                new Vector3D(xScale, 0, 0, 0),
+                new Vector3D(0, yScale, 0, 0),
+                new Vector3D(0, 0, zScale, 0),
+                new Vector3D(0, 0, 0, 1)
+
             };
+
+            //Create a new object for printing so we don't modify the original
+            Vector3D[] newObj = pObj;
 
             for (int i = 0; i < pObj.Length; i++)
             {
-                pObj[i] = pObj[i].ScaleByMatrix(rawScaleMatrix);
-                pObj[i].PrintRect();
+                newObj[i] = pObj[i].ScaleByMatrix(rawScaleMatrix);
+                newObj[i].PrintRect();
             }
 
 
         }
 
+        /// <summary>
+        /// Translates the object's vertices by adding the user given changes
+        /// in axis.
+        /// </summary>
+        /// <param name="pObj"></param>
         void Translate(Vector3D[] pObj)
         {
             Console.WriteLine("Translate:");
@@ -141,19 +172,23 @@ namespace ScalingAndTranslating
             float yTranslate = (float)Convert.ToDouble(Console.ReadLine());
             Console.Write("How much in the z direction? ");
             float zTranslate = (float)Convert.ToDouble(Console.ReadLine());
+            
 
-            float[,] translationMatrix = 
-            { 
-                {xTranslate},
-                {yTranslate},
-                {zTranslate},
-                {1}
+            Vector3D[] translateMatrix =
+            {
+                new Vector3D(1,0,0,xTranslate),
+                new Vector3D(0,1,0,yTranslate),
+                new Vector3D(0,0,1,zTranslate),
+                new Vector3D(0,0,0,1)
             };
+
+            //Create a new object for printing so we don't modify the original
+            Vector3D[] newObj = pObj;
 
             for (int i = 0; i < pObj.Length; i++)
             {
-                pObj[i] = pObj[i].TranslateByMatrix(translationMatrix);
-                pObj[i].PrintRect();
+                newObj[i] = pObj[i].ScaleByMatrix(translateMatrix);
+                newObj[i].PrintRect();
             }
         }
 
