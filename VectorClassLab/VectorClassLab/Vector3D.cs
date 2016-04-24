@@ -207,7 +207,7 @@ namespace VectorClassLab
 
         public void PrintRect()
         {
-            Console.WriteLine("<" + x + ", " + y + ", " + z + ">");
+            Console.WriteLine(string.Format("<{0:N2}, {1:N2}, {2:N2}>",x,y,z));
         }
 
         /// <summary>
@@ -464,6 +464,21 @@ namespace VectorClassLab
             float x = v1.getX() * v2.getX();
             float y = v1.getY() * v2.getY();
             float z = v1.getZ() * v2.getZ();
+
+            return x + y + z;
+        }
+
+        /// <summary>
+        /// Returns the dot product for matrix multiplication.
+        /// </summary>
+        /// <param name="v1"></param>
+        /// <param name="v2"></param>
+        /// <returns></returns>
+        public static float Dot4D(Vector3D v1, Vector3D v2)
+        {
+            float x = v1.getX() * v2.getX();
+            float y = v1.getY() * v2.getY();
+            float z = v1.getZ() * v2.getZ();
             float w = v1.getW() * v2.getW();
 
             return x + y + z + w;
@@ -635,7 +650,54 @@ namespace VectorClassLab
                 w = matrix[3] * this;
                 return new Vector3D(x, y, z, w);
             }
+        }
 
+        /// <summary>
+        /// Returns the vector given rotated around x by angle.
+        /// </summary>
+        /// <param name="angle">Angle to rotate</param>
+        /// <returns></returns>
+        public Vector3D RotateAroundX(float angle)
+        {
+            float x, y, z, w;
+
+            Vector3D[] rotationMatrix =
+            {
+                new Vector3D(1, 0, 0, 0),
+                new Vector3D(0, (float)Math.Cos(angle), -(float)Math.Sin(angle), 0),
+                new Vector3D(0, (float)Math.Sin(angle), (float)Math.Cos(angle), 0),
+                new Vector3D(0,0,0,1)
+            };
+
+            return ScaleByMatrix(rotationMatrix);
+        }
+
+        public Vector3D RotateAroundY(float angle)
+        {
+            float x, y, z, w;
+
+            Vector3D[] rotationMatrix =
+            {
+                new Vector3D((float)Math.Cos(angle), 0, (float)Math.Sin(angle), 0),
+                new Vector3D(0,1,0,0),
+                new Vector3D(-(float)Math.Sin(angle), 0, (float)Math.Cos(angle), 0),
+                new Vector3D(0,0,0,1)
+            };
+
+            return ScaleByMatrix(rotationMatrix);
+        }
+
+        public Vector3D RotateAroundZ(float angle)
+        {
+            Vector3D[] rotationMatrix =
+            {
+                new Vector3D((float)Math.Cos(angle), -(float)Math.Sin(angle), 0, 0),
+                new Vector3D((float)Math.Sin(angle), (float)Math.Cos(angle), 0,0),
+                new Vector3D(0,0,1,0),
+                new Vector3D(0,0,0,1)
+            };
+            
+            return ScaleByMatrix(rotationMatrix);
         }
     }
 }
