@@ -401,6 +401,11 @@ namespace VectorClassLab
             return differenceVector;
         }
 
+        public static Vector3D operator -(Vector3D v1)
+        {
+            return new Vector3D(-v1.x, -v1.y, -v1.z);
+        }
+
         /// <summary>
         /// Scalar Operator.
         /// Scales the vector by a number.
@@ -661,6 +666,8 @@ namespace VectorClassLab
         {
             float x, y, z, w;
 
+            angle *= deg2rad;
+
             Vector3D[] rotationMatrix =
             {
                 new Vector3D(1, 0, 0, 0),
@@ -676,6 +683,8 @@ namespace VectorClassLab
         {
             float x, y, z, w;
 
+            angle *= deg2rad;
+
             Vector3D[] rotationMatrix =
             {
                 new Vector3D((float)Math.Cos(angle), 0, (float)Math.Sin(angle), 0),
@@ -689,6 +698,9 @@ namespace VectorClassLab
 
         public Vector3D RotateAroundZ(float angle)
         {
+
+            angle *= deg2rad;
+
             Vector3D[] rotationMatrix =
             {
                 new Vector3D((float)Math.Cos(angle), -(float)Math.Sin(angle), 0, 0),
